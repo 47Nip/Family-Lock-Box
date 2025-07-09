@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Groups</title>
+</head>
+
+<body>
+    {% extends 'nav.html' %}
+    {% block content %}
+    {% load static %}
+    <div class="container mt-5">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }} alert-dismissible fade show{% endif %}" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <h2>Welcome to the Member Group</h2>
+        <div class="group-container">
+            {% for matched_user in matched_users %}
+            <div class="user-card">
+                <a href="{% url 'groupdocument' matched_user.matched_username %}" style="background-color: white;">
+                <h2 style="color: rgb(255, 115, 0);"> {{ matched_user.matched_username }}</h2></a>
+                {% if matched_user.matched_user_profilepicture %}
+                    <img src="{{ matched_user.matched_user_profilepicture.url }}" alt="Profile Picture">
+                {% else %}
+                    <img src="{% static 'img/default_profile.png' %}" alt="Profile Picture">
+                {% endif %}
+                <p>Email: {{ matched_user.matched_user_email }}</p>
+                <p>Full Name: {{ matched_user.matched_user_full_name }}</p>
+            </div>
+            {% empty %}
+            <p>No matched users found.</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

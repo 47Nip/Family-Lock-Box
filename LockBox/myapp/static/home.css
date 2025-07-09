@@ -1,0 +1,206 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.container img{
+    width:100px;
+    height: 70px;
+}
+
+/* Navbar Styles */
+.unique-navbar {
+    background-color: #1e1e2d;
+    color: #fff;
+}
+
+.unique-navbar .navbar-brand {
+    color: #fff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.unique-navbar .nav-link {
+    color: #c4c4d9;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+.dropdown-menu {
+    border-radius: 5px;
+    border: 1px  #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e2d;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    color: #d8e1eb;
+    transition: background-color  0.3s ease, color 0.3s ease;
+
+}
+
+.dropdown-item:hover {
+    background-color: #144375; 
+    color: #fff; /* White */
+
+}
+.unique-navbar .nav-link:hover {
+    color: #ff7b54;
+}
+
+.unique-navbar .custom-btn {
+    background: linear-gradient(45deg, #ff7b54, #ffcb42);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.unique-navbar .custom-btn:hover {
+    background: linear-gradient(45deg, #ffcb42, #ff7b54);
+}
+
+
+/* Header Styles */
+.unique-header {
+    background: linear-gradient(to bottom right, #292929, #41436a);
+    color: #fff;
+    padding: 100px 0;
+}
+
+.unique-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+}
+
+.unique-header p {
+    color: #d1d1e0;
+    font-size: 1.2rem;
+}
+
+.unique-header .btn-header {
+    background: linear-gradient(45deg, #ff7b54, #ffcb42);
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.unique-header .btn-header:hover {
+    background: linear-gradient(45deg, #ffcb42, #ff7b54);
+}
+
+/* Footer Styles */
+.unique-footer {
+    background-color: #1e1e2d;
+    color: #c4c4d9;
+    padding: 20px 0;
+}
+
+.unique-footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.unique-footer .social-links a {
+    color: #ff7b54;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.unique-footer .social-links a:hover {
+    color: #ffcb42;
+}
+.profile-icon-link {
+    font-size: 2rem; /* Makes the icon bigger */
+    color: #6a11cb; /* Unique color for the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa; /* Light background for better contrast */
+    border-radius: 65%; /* Circle icon background */
+    width: 40px;
+    height: 40px;
+    text-decoration: none; /* Remove underline */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.profile-icon-link:hover {
+    background: #2575fc; /* Change background on hover */
+    color: white; /* Change icon color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Responsive Navbar */
+.unique-navbar .navbar-toggler {
+    display: none;
+    border: none;
+    background: transparent;
+}
+
+.unique-navbar .navbar-toggler-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.unique-navbar .navbar-toggler-icon::before,
+.unique-navbar .navbar-toggler-icon::after {
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.unique-navbar .navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.unique-navbar .navbar-toggler-icon::after {
+    top: 8px;
+}
+
+.unique-navbar .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+}
+
+@media (max-width: 768px) {
+    .unique-navbar .navbar-toggler {
+        display: block;
+    }
+    .unique-navbar .navbar-collapse {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1e1e2d;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+    }
+    .unique-navbar .navbar-collapse.show {
+        display: flex !important;
+    }
+    .unique-navbar .nav-link {
+        padding: 15px;
+        border-bottom: 1px solid #333;
+    }
+}
+
+

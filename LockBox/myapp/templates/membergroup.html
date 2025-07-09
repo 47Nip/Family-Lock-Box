@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'nav.html' %}    
+{% block content %}
+
+
+    <div class="container membergroup-container">
+        <h2>Enter Your Code</h2>
+        
+        <!-- Display alert messages dynamically -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}alert-dismissible fade show {% endif %} role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Form to submit the code -->
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="code">Group Code:</label>
+                <input type="text" id="code" name="code" placeholder="Enter group code" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% endblock %}
+
+
+    
+</body>
+</html>
